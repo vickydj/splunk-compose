@@ -2,18 +2,18 @@ version: '3.4'
 
 networks:
   default:
-    external:
-      name: apps
+    name: apps
+    external: true
 
 services:
 
   cm1:
-    image: local/splunk:8.1.3
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.1.3
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: cm1
     hostname: cm1
@@ -43,12 +43,12 @@ services:
     - ${HOME}/projects:/projects
  
   idx1-1: 
-    image: local/splunk:8.1.3
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.1.3
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: idx1-1
     hostname: idx1-1
@@ -66,12 +66,12 @@ services:
     - ${HOME}/projects:/projects
 
   idx1-2: 
-    image: local/splunk:8.1.3
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.1.3
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: idx1-2
     hostname: idx1-2
@@ -89,12 +89,12 @@ services:
     - ${HOME}/projects:/projects
 
   idx2-1: 
-    image: local/splunk:8.1.3
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.1.3
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: idx2-1
     hostname: idx2-1
@@ -112,12 +112,12 @@ services:
     - ${HOME}/projects:/projects
 
   idx2-2: 
-    image: local/splunk:8.1.3
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.1.3
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: idx2-2
     hostname: idx2-2

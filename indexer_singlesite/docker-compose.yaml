@@ -2,8 +2,8 @@ version: '3.6'
 
 networks:
   default:
-    external:
-      name: apps
+    name: apps
+    external: true
 
 services:
 
