@@ -36,7 +36,7 @@ services:
     - sldap
 
   ssplunk:
-    image: splunk/splunk:8.2.6
+    image: splunk/splunk:9.1.1
     container_name: ssplunk
     hostname: ssplunk
     ports:

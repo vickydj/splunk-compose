@@ -14,7 +14,7 @@ services:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: &version 8.2.6
+        VERSION: &version 9.1.1
         TOOL: splunk
     container_name: sh1
     hostname: sh1
