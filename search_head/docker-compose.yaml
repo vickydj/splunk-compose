@@ -8,12 +8,12 @@ networks:
 services:
 
   sh1:
-    image: local/splunk:8.2.6
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.2.6
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: sh1
     hostname: sh1

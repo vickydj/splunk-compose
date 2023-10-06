@@ -8,12 +8,12 @@ networks:
 services:
 
   sh1:
-    image: local/splunk:8.2.6
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.2.6
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: hf1
     hostname: hf1
@@ -30,4 +30,4 @@ services:
       SPLUNK_IDXC_PASS4SYMMKEY: cm_and_indexer_comms
       SPLUNK_IDXC_DISCOVERYPASS4SYMMKEY: cm_and_forwarder_comms
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects

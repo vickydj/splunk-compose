@@ -7,12 +7,12 @@ networks:
 services:
 
   sbs:
-    image: local/splunk:8.2.6
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.2.6
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: sbs
     hostname: sbs
@@ -28,7 +28,7 @@ services:
       SPLUNK_PASSWORD: password
       SPLUNK_HEC_TOKEN: password
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects
   
   sbf:
     image: local/universalforwarder:8.2.6
@@ -36,7 +36,7 @@ services:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.2.6
+        VERSION: 9.1.1
         TOOL: universalforwarder
     container_name: sbf
     hostname: sbf
@@ -47,4 +47,4 @@ services:
       SPLUNK_INDEXER_URL: sbs
       SPLUNK_PASSWORD: password
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects

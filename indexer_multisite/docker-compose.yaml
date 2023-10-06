@@ -40,8 +40,8 @@ services:
       SPLUNK_MULTISITE_MASTER: cm1
       SPLUNK_SITE: site1 
     volumes:
-    - ${HOME}/projects:/projects
- 
+    - D:\docker_storage\projects:/projects
+
   idx1-1: 
     image: local/splunk:9.1.1
     build:
@@ -63,7 +63,7 @@ services:
       SPLUNK_IDXC_PASS4SYMMKEY: cm_and_indexer_comms
       SPLUNK_SITE: site1
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects
 
   idx1-2: 
     image: local/splunk:9.1.1
@@ -86,7 +86,7 @@ services:
       SPLUNK_IDXC_PASS4SYMMKEY: cm_and_indexer_comms
       SPLUNK_SITE: site1
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects
 
   idx2-1: 
     image: local/splunk:9.1.1
@@ -109,7 +109,7 @@ services:
       SPLUNK_IDXC_PASS4SYMMKEY: cm_and_indexer_comms
       SPLUNK_SITE: site2
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects
 
   idx2-2: 
     image: local/splunk:9.1.1
@@ -132,4 +132,4 @@ services:
       SPLUNK_IDXC_PASS4SYMMKEY: cm_and_indexer_comms
       SPLUNK_SITE: site2
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects

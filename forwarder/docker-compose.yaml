@@ -26,4 +26,4 @@ services:
       SPLUNK_CLUSTER_MASTER_URL: cm1
       SPLUNK_IDXC_DISCOVERYPASS4SYMMKEY: cm_and_forwarder_comms
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects

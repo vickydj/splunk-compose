@@ -25,12 +25,12 @@ services:
     - ./haproxy:/usr/local/etc/haproxy
   
   deployer:
-    image: local/splunk:8.2.6
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.2.6
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: deployer
     hostname: deployer
@@ -46,17 +46,17 @@ services:
       SPLUNK_SHC_PASS4SYMMKEY: sh_comms
       SPLUNK_IDXC_DISCOVERYPASS4SYMMKEY: cm_and_forwarder_comms
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects
     
   sh1:
     depends_on:
     - deployer
-    image: local/splunk:8.2.6
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.2.6
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: sh1
     hostname: sh1
@@ -75,17 +75,17 @@ services:
       SPLUNK_IDXC_PASS4SYMMKEY: cm_and_indexer_comms
       SPLUNK_IDXC_DISCOVERYPASS4SYMMKEY: cm_and_forwarder_comms
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects
 
   sh2:
     depends_on:
     - deployer
-    image: local/splunk:8.2.6
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.2.6
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: sh2
     hostname: sh2
@@ -104,17 +104,17 @@ services:
       SPLUNK_IDXC_PASS4SYMMKEY: cm_and_indexer_comms
       SPLUNK_IDXC_DISCOVERYPASS4SYMMKEY: cm_and_forwarder_comms
     volumes:
-    - ${HOME}/projects:/projects
+    - D:\docker_storage\projects:/projects
 
   sh3:
     depends_on:
     - deployer
-    image: local/splunk:8.2.6
+    image: local/splunk:9.1.1
     build:
       context: ../.images/splunk
       network: host
       args:
-        VERSION: 8.2.6
+        VERSION: 9.1.1
         TOOL: splunk
     container_name: sh3
     hostname: sh3
